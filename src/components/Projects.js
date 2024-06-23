@@ -4,6 +4,8 @@ import colorSharp2 from "../assets/img/color-sharp2.png";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import 'animate.css';
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
     
@@ -51,20 +53,15 @@ export const Projects = () => {
             <Container>
                 <Row>
                     <Col>
-                        <h2>Projects</h2>
-                        <p>Commodo amet ipsum exercitation Lorem adipisicing non. Incididunt qui adipisicing quis pariatur minim. Incididunt laboris veniam laborum aliquip qui qui eu quis ad culpa elit anim. Ad incididunt mollit dolore ut id non labore.</p>
+                    <TrackVisibility>
+                        {/* this is how we wrap our component to use the isVisible variable */}
+                        {({ isVisible }) => 
+                            <div className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                                <h2>Projects</h2>
+                                <p>Commodo amet ipsum exercitation Lorem adipisicing non. Incididunt qui adipisicing quis pariatur minim. Incididunt laboris veniam laborum aliquip qui qui eu quis ad culpa elit anim. Ad incididunt mollit dolore ut id non labore.</p>
+                            </div>}
+                        </TrackVisibility>
                        <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                        <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                            <Nav.Item>
-                                <Nav.Link eventKey="first">Tab One</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="second">Tab Two</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="third">Tab Three</Nav.Link>
-                            </Nav.Item>
-                        </Nav>
                         <Tab.Content>
                             <Tab.Pane eventKey="first">
                                 <Row>
