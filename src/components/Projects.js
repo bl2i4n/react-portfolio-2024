@@ -6,6 +6,9 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import 'animate.css';
 import TrackVisibility from "react-on-screen";
+import madelogo from "../assets/img/made-logo.png";
+import covidQuiz from "../assets/img/covid-quiz.png";
+import kings from "../assets/img/kings.png";
 
 export const Projects = () => {
     
@@ -14,19 +17,19 @@ export const Projects = () => {
             {
                 title: "Project 1",
                 description: "This is a project that I worked on. It was a lot of fun and I learned a lot.",
-                imgUrl: projImg1
+                imgUrl: madelogo
                 // link: "https://www.google.com"
             },
             {
                 title: "Project 2",
                 description: "This is a project that I worked on. It was a lot of fun and I learned a lot.",
-                imgUrl: projImg2
+                imgUrl: covidQuiz
                 // link: "https://www.google.com"
             },
             {
                 title: "Project 3",
                 description: "This is a project that I worked on. It was a lot of fun and I learned a lot.",
-                imgUrl: projImg3
+                imgUrl: kings
                 // link: "https://www.google.com"
             },
             {
