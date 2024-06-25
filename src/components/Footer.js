@@ -1,8 +1,9 @@
 import { Col, Row, Container } from "react-bootstrap"
 import logo from '../assets/img/logo.svg'
-import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
+import githubIcon from '../assets/img/github-nav-icon.svg';
+import linkedinIcon from '../assets/img/linkedin-nav-icon.svg';
+import wordpressIcon from '../assets/img/wordpress-nav-icon.svg';
+
 
 export const Footer = () => {
 
@@ -16,9 +17,9 @@ export const Footer = () => {
                     </Col>
                     <Col sm={6} className="text-center text-sm-end">
                         <div className="social-icon">
-                            <a href=""><img src={navIcon1} /></a>
-                            <a href=""><img src={navIcon2} /></a>
-                            <a href=""><img src={navIcon3} /></a>
+                            <a href=""><img src={linkedinIcon} /></a>
+                            <a href=""><img src={githubIcon} /></a>
+                            <a href=""><img src={wordpressIcon} /></a>
                         </div>
                         <p>CopyRight 2024. All Rights Reserved</p>
                     </Col>
