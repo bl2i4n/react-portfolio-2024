@@ -51,9 +51,9 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
                 <div className="social-icon">
-                    <a href="/#"><img src={linkedinIcon} alt="github" /></a>
-                    <a href="/#"><img src={githubIcon} alt="wordpress blog" /></a>
-                    <a href="/#"><img src={wordpressIcon} alt="wordpress blog" /></a>
+                    <a href="https://www.linkedin.com/in/briandelacruz408/"><img src={linkedinIcon} alt="linkedin" /></a>
+                    <a href="https://github.com/bl2i4n"><img src={githubIcon} alt="wordpress blog" /></a>
+                    <a href="https://codehog.wordpress.com/"><img src={wordpressIcon} alt="wordpress blog" /></a>
                 </div>
                 <button className="vvd" onClick={() => console.log('connect')} href="#"><span>Let's Connect</span></button>
             </span>
