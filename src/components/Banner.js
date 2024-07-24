@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/ninja.png";
 import 'animate.css';
 import TrackVisibility from "react-on-screen";
+import { HashLink } from 'react-router-hash-link';
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
+
 
 export const Banner = () => {
     // animation needs useState and useEffect, for typing and deleting animation
@@ -14,7 +19,7 @@ export const Banner = () => {
     // initially set to false since we are typing out the word
     const[isDeleting, setIsDeleting] = useState(false);
     // list of words we'll be displaying and rotating
-    const toRotate = ["Support Engineer", "Solutions Engineer", "Enterprise Technician"];
+    const toRotate = ["Support Engineer", "Enterprise Technician", "Junior Web Developer"];
     // component needs to know what text we are showing right now
     // also showing only portion of the word
     const [text, setText] = useState('');
@@ -63,27 +68,31 @@ export const Banner = () => {
     
     return (
         <section className="banner" id="home">
-            <Container>
-                <Row className="align-items-center">
-                    <Col xs={12} md={6} xl={7}>
-                        <TrackVisibility>
-                        {/* this is how we wrap our component to use the isVisible variable */}
-                        {({ isVisible }) => 
-                        <div className={isVisible ? "animated__animated animate__fadeIn" : ""}>
-                            <span className="tagline">Welcome to my Portfolio</span>
-                            <h1>{`Hi I'm Brian `}<span className="wrap">{text}</span></h1>
-                            {/* About section */}
-                            <p>Cillum incididunt laboris exercitation quis proident pariatur commodo labore occaecat nostrud reprehenderit id. Dolor do nulla non enim ipsum labore. Veniam eu consectetur deserunt reprehenderit aute.</p>
-                            <button onClick={() => console.log('connect')}>Let's connect<ArrowRightCircle size={25}/></button>
-                        </div>}
-                        </TrackVisibility>
-                    </Col>
-                    <Col xs={12} md={6} xl={5}>
-                    <img src={headerImg} alt="Header Img" />
+                <Container>
+                    <Row className="align-items-center">
+                        <Col xs={12} md={6} xl={7}>
+                            <TrackVisibility>
+                            {/* this is how we wrap our component to use the isVisible variable */}
+                            {({ isVisible }) => 
+                            <div className={isVisible ? "animated__animated animate__fadeIn" : ""}>
+                                <span className="tagline">Welcome to my Portfolio</span>
+                                <h1>{`Hi! I'm Brian, `}<span className="wrap">{text}</span></h1>
+                                {/* About section */}
+                                <p>Cillum incididunt laboris exercitation quis proident pariatur commodo labore occaecat nostrud reprehenderit id. Dolor do nulla non enim ipsum labore. Veniam eu consectetur deserunt reprehenderit aute.</p>
+                                <Router>
+                                    <HashLink to='#contact' style={{ textDecoration: 'none' }}>
+                                        <button to='#contact'>Let's connect<ArrowRightCircle size={25}/></button>
+                                    </HashLink>
+                                </Router>
+                            </div>}
+                            </TrackVisibility>
+                        </Col>
+                        <Col xs={12} md={6} xl={5}>
+                        <img src={headerImg} alt="Header Img" />
 
-                    </Col>
-                </Row>
-            </Container>
+                        </Col>
+                    </Row>
+                </Container>
         </section>
     )
 }

@@ -45,7 +45,7 @@ export const Contact = () => {
         } else {
             setStatus({
                 success: false,
-                message: 'Message failed to send, please try again laster.'
+                message: 'Message failed to send, please try again later.'
             })
         }
     };

@@ -12,10 +12,7 @@ export const Footer = () => {
         <footer className="footer">
             <Container>
                 <Row className="align-items-center">
-                    <Col sm={6}>
-                        <img src={logo} alt="Logo" />
-                    </Col>
-                    <Col sm={6} className="text-center text-sm-end">
+                    <Col className="align-right text-sm-end">
                         <div className="social-icon" id="social-icon-footer">
                             <a href="https://www.linkedin.com/in/briandelacruz408/"><img src={linkedinIcon} /></a>
                             <a href="https://github.com/bl2i4n"><img src={githubIcon} /></a>
