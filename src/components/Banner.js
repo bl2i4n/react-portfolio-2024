@@ -76,9 +76,11 @@ export const Banner = () => {
                             {({ isVisible }) => 
                             <div className={isVisible ? "animated__animated animate__fadeIn" : ""}>
                                 <span className="tagline">Welcome to my Portfolio</span>
-                                <h1>{`Hi! I'm Brian, `}<span className="wrap">{text}</span></h1>
+                                <h1>{`Hi I'm Brian, `}<span className="wrap">{text}</span></h1>
                                 {/* About section */}
-                                <p>Cillum incididunt laboris exercitation quis proident pariatur commodo labore occaecat nostrud reprehenderit id. Dolor do nulla non enim ipsum labore. Veniam eu consectetur deserunt reprehenderit aute.</p>
+                                <p>I'm a Bay Area based engineer with over 10 years of support experience. I've worked at some amazing places like Netflix, Zoom, and Airbnb. I also love making things and bringing things to life with my knowledge in web and game development.
+                                    
+                                </p>
                                 <Router>
                                     <HashLink to='#contact' style={{ textDecoration: 'none' }}>
                                         <button to='#contact'>Let's connect<ArrowRightCircle size={25}/></button>

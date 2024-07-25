@@ -34,22 +34,26 @@ export const Skills = () => {
                     <Col>
                         <div className="skill-bx">
                             <h2>Skills</h2>
-                            <p>Sint enim et dolor aliqua laborum non elit sunt sunt voluptate. Occaecat quis cillum esse magna amet ad qui pariatur id proident est occaecat tempor. Ut ea eiusmod mollit ad. Non ad elit aliqua commodo fugiat anim consectetur id. Sint esse exercitation amet velit.</p>
+                            <p>I have a well rounded background in both support and development roles. The skills below highlight the knowledge that I have gained from my experience. For more details on the specific technologies please reach out and connect with me for a chat! </p>
                             <Carousel responsive={responsive} infinite={true} className="skill-slider">
                                 <div className="item">
                                     <img src={meter1} alt="Skill meter"/>
                                     <h5>API Troubleshooting</h5>
                                 </div>
                                 <div className="item">
+                                    <img src={meter3} alt="Skill meter 3"/>
+                                    <h5>Enterprise Support</h5>
+                                </div>
+                                <div className="item">
                                     <img src={meter2} alt="Skill meter 2"/>
                                     <h5>Web Development</h5>
                                 </div>
                                 <div className="item">
-                                    <img src={meter3} alt="Skill meter 3"/>
-                                    <h5>Integration Support</h5>
+                                    <img src={meter2} alt="Skill meter 2"/>
+                                    <h5>Game Development</h5>
                                 </div>
                                 <div className="item">
-                                    <img src={meter1} alt="Skill meter 4"/>
+                                    <img src={meter2} alt="Skill meter 2"/>
                                     <h5>IT System Administration</h5>
                                 </div>
                             </Carousel>

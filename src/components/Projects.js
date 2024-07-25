@@ -61,7 +61,7 @@ export const Projects = () => {
                         {({ isVisible }) => 
                             <div className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                                 <h2>Projects</h2>
-                                <p>Commodo amet ipsum exercitation Lorem adipisicing non. Incididunt qui adipisicing quis pariatur minim. Incididunt laboris veniam laborum aliquip qui qui eu quis ad culpa elit anim. Ad incididunt mollit dolore ut id non labore.</p>
+                                <p>Here, you'll find a collection of my work across multiple domains, including web development, game design, and also personal passion projects. Each project show my ability to combine technical skills with creativity and problem-solving.</p>
                             </div>}
                         </TrackVisibility>
                        <Tab.Container id="projects-tabs" defaultActiveKey="first">
