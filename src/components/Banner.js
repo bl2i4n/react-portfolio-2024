@@ -36,7 +36,7 @@ export const Banner = () => {
         // once we set interval and component unmounts we need to clear it
         return () => {clearInterval(ticker)};
         // useEffect will run every time text changes
-    }, [text])
+    }, [text, delta, tick])
     
     // define the tick function
     const tick = () => {
