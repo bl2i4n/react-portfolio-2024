@@ -1,54 +1,54 @@
-import { Container, Col, Row, Tab, Nav } from "react-bootstrap";
+import { Container, Col, Row, Tab } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
 import 'animate.css';
 import TrackVisibility from "react-on-screen";
-import madelogo from "../assets/img/made-logo.png";
+import madelogo from "../assets/img/made-logo-resized.png";
 import covidQuiz from "../assets/img/covid-quiz.png";
-import kings from "../assets/img/kings.png";
+import kings from "../assets/img/kings-img-resized.png";
+import githubcat from "../assets/img/githubcat.png"
+import pacer from "../assets/img/pacer.png"
+import threejs from "../assets/img/three-js-logo.jpg"
 
 export const Projects = () => {
     
     
     const projects = [
             {
-                title: "Project 1",
-                description: "This is a project that I worked on. It was a lot of fun and I learned a lot.",
-                imgUrl: madelogo
-                // link: "https://www.google.com"
+                title: "Museum of Art and Digital Entertainment",
+                description: "Used React to add content to the Museum's website as a Web Developer",
+                imgUrl: madelogo,
+                link: "https://www.themade.org/"
             },
             {
-                title: "Project 2",
-                description: "This is a project that I worked on. It was a lot of fun and I learned a lot.",
-                imgUrl: covidQuiz
-                // link: "https://www.google.com"
+                title: "King's Platformer",
+                description: "This is a 2D platformer game built using Javascript and HTML Canvas ",
+                imgUrl: kings,
+                link: "https://github.com/bl2i4n/king-platformer-game"
             },
             {
-                title: "Project 3",
-                description: "This is a project that I worked on. It was a lot of fun and I learned a lot.",
-                imgUrl: kings
-                // link: "https://www.google.com"
+                title: "Pacer+",
+                description: "Worked as a developer on this legal application",
+                imgUrl: pacer,
+                link: "http://pacerautomatedsolutions.com/"
             },
             {
-                title: "Project 4",
-                description: "This is a project that I worked on. It was a lot of fun and I learned a lot.",
-                imgUrl: projImg1
-                // link: "https://www.google.com"
+                title: "ThreeJS Tutorial",
+                description: "Continously learning by working through Udemy's ThreeJS course",
+                imgUrl: threejs,
+                link: "https://github.com/bl2i4n/three.js-tutorial"
             },
             {
-                title: "Project 5",
-                description: "This is a project that I worked on. It was a lot of fun and I learned a lot.",
-                imgUrl: projImg2
-                // link: "https://www.google.com"
+                title: "Do I Have It?",
+                description: "Project I worked on during COVID to help people find out if they were symptomatic. Used Angular and typescript for this app.",
+                imgUrl: covidQuiz,
+                link: "https://github.com/bl2i4n/TestMe"
             },
             {
-                title: "Project 6",
-                description: "This is a project that I worked on. It was a lot of fun and I learned a lot.",
-                imgUrl: projImg3
-                // link: "https://www.google.com"
+                title: "Chat Me Slack Clone",
+                description: "This was a Slack clone application built using Firebase and Angular.",
+                imgUrl: githubcat,
+                link: "https://github.com/bl2i4n/Chatme"
             },
         ];
     return (
@@ -61,7 +61,7 @@ export const Projects = () => {
                         {({ isVisible }) => 
                             <div className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                                 <h2>Projects</h2>
-                                <p>Here, you'll find a collection of my work across multiple domains, including web development, game design, and also personal passion projects. Each project show my ability to combine technical skills with creativity and problem-solving.</p>
+                                <p>Here, you'll find a collection of my work across multiple domains, including web development, game design, and also personal passion projects. Each project shows my ability to combine technical skills with creativity and problem-solving.</p>
                             </div>}
                         </TrackVisibility>
                        <Tab.Container id="projects-tabs" defaultActiveKey="first">
@@ -81,14 +81,12 @@ export const Projects = () => {
                                     }
                                 </Row>
                             </Tab.Pane>
-                            <Tab.Pane eventKey="second">Lorem Ipsum</Tab.Pane>
-                            <Tab.Pane eventKey="third">Lorem Ipsum</Tab.Pane>
                         </Tab.Content>
                         </Tab.Container>
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-right" src={colorSharp2} />  
+            <img className="background-image-right" alt="backdrop behind projects" src={colorSharp2} />  
         </section>
     )
 }
