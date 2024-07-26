@@ -23,32 +23,44 @@ export const Contact = () => {
         })
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setButtonText('Sending...');
-        let response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(formDetails),
-        });
-        
-        let result = response.json();
-        setButtonText('Send');
-        // clear the form
-        setFormDetails(formInitialDetails);
-        if (result.code === 200) {
-            setStatus({
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const data = {
+          firstName: formData.get('firstName'),
+          lastName: formData.get('lastName'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          message: formData.get('message'),
+        };
+    
+        fetch('http://localhost:3001/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((result) => {
+            if (result.code === 200) {
+              setStatus({
                 success: true,
-                message: 'Message sent successfully'
-            })
-        } else {
-            setStatus({
+                message: 'Message sent successfully',
+              });
+            } else {
+              setStatus({
                 success: false,
-                message: 'Message failed to send, please try again later.'
-            })
-        }
+                message: 'Message failed to send',
+              });
+            }
+          })
+          .catch((error) => {
+            setStatus({
+              success: false,
+              message: 'An error occurred: ' + error.message,
+            });
+          });
     };
 
     return (
