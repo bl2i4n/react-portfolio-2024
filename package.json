@@ -2,6 +2,7 @@
   "name": "react-portfolio-2024",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -9,8 +10,10 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "nodemailer": "^6.9.14",
+    "path": "^0.12.7",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.3",
     "react-bootstrap-icons": "^1.11.4",

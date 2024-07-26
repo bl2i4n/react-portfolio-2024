@@ -9,13 +9,13 @@ export const Contact = () => {
         lastName: '',
         email: '',
         phone: '',
-        messagE: ''
+        message: ''
     }
-
+                                            //useState hook
     const [formDetails, setFormDetails] = useState(formInitialDetails);
     const [buttonText, setButtonText] = useState('Send');
     const [status, setStatus] = useState({});
-
+                        // category here is one of the form keys and value is the value that the user enters
     const onFormUpdate = (category, value) => {
         setFormDetails({
             ...formDetails,
@@ -26,15 +26,16 @@ export const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText('Sending...');
-        let response = await fetch('https://formspree.io/f/xnqoqzqz', {
+        let response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify(formDetails),
         });
-        setButtonText('Send');
+        
         let result = response.json();
+        setButtonText('Send');
         // clear the form
         setFormDetails(formInitialDetails);
         if (result.code === 200) {
@@ -53,7 +54,7 @@ export const Contact = () => {
     return (
         <section className="contact" id="contact">
             <Container>
-                <Row classname="align-items-center">
+                <Row className="align-items-center">
                     <Col md={6}>
                         <img src={contactImg} alt="Contact Us" />
                     </Col>
