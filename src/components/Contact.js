@@ -13,7 +13,7 @@ export const Contact = () => {
     }
                                             //useState hook
     const [formDetails, setFormDetails] = useState(formInitialDetails);
-    const [buttonText] = useState('Send');
+    const [buttonText, setButtonText] = useState('Send');
     const [status, setStatus] = useState({});
                         // category here is one of the form keys and value is the value that the user enters
     const onFormUpdate = (category, value) => {
@@ -23,44 +23,42 @@ export const Contact = () => {
         })
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        const data = {
-          firstName: formData.get('firstName'),
-          lastName: formData.get('lastName'),
-          email: formData.get('email'),
-          phone: formData.get('phone'),
-          message: formData.get('message'),
-        };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setButtonText('Sending...');
     
-        fetch('http://localhost:3001/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-          .then((response) => response.json())
-          .then((result) => {
-            if (result.code === 200) {
-              setStatus({
-                success: true,
-                message: 'Message sent successfully',
-              });
-            } else {
-              setStatus({
-                success: false,
-                message: 'Message failed to send',
-              });
-            }
-          })
-          .catch((error) => {
-            setStatus({
-              success: false,
-              message: 'An error occurred: ' + error.message,
+        try {
+            let response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(formDetails),
             });
-          });
+    
+            let result = await response.json();
+    
+            if (response.ok && result.code === 200) {
+                setStatus({
+                    success: true,
+                    message: 'Message sent successfully'
+                });
+                // clear the form
+                setFormDetails(formInitialDetails);
+            } else {
+                setStatus({
+                    success: false,
+                    message: 'Message failed to send, please try again later.'
+                });
+            }
+        } catch (error) {
+            setStatus({
+                success: false,
+                message: 'An error occurred, please try again later.'
+            });
+        } finally {
+            setButtonText('Send');
+        }
     };
 
     return (
