@@ -13,7 +13,7 @@ export const Contact = () => {
     }
                                             //useState hook
     const [formDetails, setFormDetails] = useState(formInitialDetails);
-    const [buttonText, setButtonText] = useState('Send');
+    const [buttonText] = useState('Send');
     const [status, setStatus] = useState({});
                         // category here is one of the form keys and value is the value that the user enters
     const onFormUpdate = (category, value) => {

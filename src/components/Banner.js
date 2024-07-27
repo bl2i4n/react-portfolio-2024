@@ -11,6 +11,34 @@ import {
 
 
 export const Banner = () => {
+
+        // define the tick function
+        const tick = () => {
+            // loopNum is constantly increasing
+            let i = loopNum % toRotate.length;
+            let fullText = toRotate[i];
+            // are we deleting or adding text
+            let updatedText = isDeleting? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+            
+            // update state to updated text
+            setText(updatedText);
+    
+            // pace is different when deleting
+            if (isDeleting){
+                setDelta(prevDelta => prevDelta / 2);
+            }
+    
+            // check if we finished typing out the word
+            if (!isDeleting && updatedText === fullText) {
+                setIsDeleting(true);
+                setDelta(period);
+            // completely delete the word
+            } else if (isDeleting && updatedText === '') {
+                setIsDeleting(false);
+                setLoopNum(loopNum + 1);
+                setDelta(500);
+            }
+        }
     // animation needs useState and useEffect, for typing and deleting animation
 
     // indicate index we're at in the word we're displaying
@@ -38,33 +66,6 @@ export const Banner = () => {
         // useEffect will run every time text changes
     }, [text, delta, tick])
     
-    // define the tick function
-    const tick = () => {
-        // loopNum is constantly increasing
-        let i = loopNum % toRotate.length;
-        let fullText = toRotate[i];
-        // are we deleting or adding text
-        let updatedText = isDeleting? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
-        
-        // update state to updated text
-        setText(updatedText);
-
-        // pace is different when deleting
-        if (isDeleting){
-            setDelta(prevDelta => prevDelta / 2);
-        }
-
-        // check if we finished typing out the word
-        if (!isDeleting && updatedText === fullText) {
-            setIsDeleting(true);
-            setDelta(period);
-        // completely delete the word
-        } else if (isDeleting && updatedText === '') {
-            setIsDeleting(false);
-            setLoopNum(loopNum + 1);
-            setDelta(500);
-        }
-    }
     
     return (
         <section className="banner" id="home">
