@@ -63,7 +63,7 @@ router.post("/api/contact", bodyParser.urlencoded({ extended: false }), (req, re
     })
 })
 
-app.use("/api/", router);
+app.use("/netlify/functions/api", router);
 
 
 app.get('*', (req, res) => {
